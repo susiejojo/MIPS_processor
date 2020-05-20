@@ -7,11 +7,11 @@ A simple MIPS processor implemented using Verilog capable of supporting basic I,
 #### - Harvard style memory design:
     separate data and instruction memory
 #### - Data memory:
-    256*4= 1024 bytes = 1KB consisting of 256 32-bit
-    registers. Addressing is word-aligned.
+    256*4= 1024 bytes = 1KB consisting of 256 32-bit registers.
+    Addressing is word-aligned.
 #### - Instruction memory: 
-    1024 bytes = 1 KB consisting of 1024 8-bit
-    registers. Addressing is byte-aligned. Each instruction is of 4 bytes.
+    1024 bytes = 1 KB consisting of 1024 8-bit registers. 
+    Addressing is byte-aligned. Each instruction is of 4 bytes.
 
 ### Instructions supported:
 
@@ -64,14 +64,9 @@ So, clock frequency = 10^8 Hz = 100 MHz
 ### Other notable features:
 
 #### - 2-stage pipeline: 
-    A register between the fetch and the decode/
-    exe stage stores the fetched instruction.
+    A register between the fetch and the decode/exe stage stores the fetched instruction.
 #### - No -Op instruction:
-    Branch involves a No-Op instruction after the branch
-    statement as due to the 2-stage pipeline, in the same clock
-    cycle in which the Branch instruction is executed, the No-Op
-    instruction is fetched and it doesn’t affect the overall running of
-    the processor.
+    Branch involves a No-Op instruction after the branch statement as due to the 2-stage pipeline, in the same clock cycle in which the Branch instruction is executed, the No-Op instruction is fetched and it doesn’t affect the overall running of the processor.
 #### - CPI : 
     N+1/N where N is the no. Of instructions to be executed.
     CPI tends to 1 as N becomes very large.
